@@ -1,0 +1,8 @@
+user(id,firsname,lastname,gender, email, password, description,age,city,phone_number,img_url,created_at,updated_at)
+language(id,name,img_url,created_at,updated_at)
+tag(id,name, created_at,updated_at)
+event(id,title,img_url, places_left, description, starting_date, ending_date, longitude,latitude,date, created_at, updated_at,#user_id)
+user_speak_language(#user_id, #language_id,created_at,updated_at)
+user_learn_language(#user_id, #language_id,created_at,updated_at)
+user_participate_event(#user_id, #event_id,created_at,updated_at)
+uvent_has_tag(#event_id, #tag_id,created_at,updated_at)

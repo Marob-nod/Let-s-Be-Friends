@@ -1,0 +1,14 @@
+own, 0N USER, 11 EVENT
+USER: firstname, lastname, gender, email, password, description, age, city, phone_number, created_at, updated_at
+speaking, 1N USER, 0N LANGUAGE
+:
+
+EVENT: title, img-url, places_left, description, starting_date, ending_date, longitude, latitude, created_at, updated_at
+wait, 0N USER, 0N EVENT
+learning, 1N USER, 0N LANGUAGE
+LANGUAGE: name, img_url, created_at, updated_at
+
+content, 1N EVENT, 0N TAG
+TAG: name, color, created_at, updated_at
+speak,1N EVENT, 0N LANGUAGE
+:

@@ -1,0 +1,129 @@
+@baseUrl=http://localhost:3000/v1
+
+GET {{baseUrl}}/users
+
+###
+
+GET {{baseUrl}}/users/?limit=10
+
+###
+
+POST  {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "firstname": "test-first-name",
+    "lastname" : "test_last_name",
+    "email":"test78@gmail.com",
+    "password" : "fvzefgzefzerf",
+    "confirmPassword" : "fvzefgzefzerf",
+    "gender" : "male"
+    
+}
+
+###
+
+PATCH  {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "id" : 54,
+    "phone_number" : "125874"
+}
+###
+
+DELETE {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "id" : 36
+}
+
+### ---GET user by email for login
+
+GET  {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+    "email":"test78@gmail.com",
+    "password" : "fvzefgzefzerf"
+}
+
+###
+
+### ---- EVENT
+## FIND ONE
+GET {{baseUrl}}/events/1
+### FIND ALL LIMIT
+GET {{baseUrl}}/events/?limit=10
+### UPDATE EVENTS
+PATCH  {{baseUrl}}/events
+Content-Type: application/json
+
+{
+    "id" : 3,
+    "title" : "efefefef"
+}
+
+### DELETE
+DELETE {{baseUrl}}/events
+Content-Type: application/json
+
+{
+    "id" : 16
+}
+###
+
+POST  {{baseUrl}}/events
+Content-Type: application/json
+
+{
+    "title": "efefefef",
+    "starting_date": "2021-10-20T06:00:26.000Z",
+    "ending_date": "2021-11-09T15:35:03.000Z",
+    "img_url": "http://dummyimage.com/103x100.png/5fa2dd/ffffff",
+    "places_left": 5,
+    "description": "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    "address" : "11 rue du parc, bron",
+    "user_id": 16
+}
+###
+
+GET  {{baseUrl}}/events/search
+
+Content-Type: application/json
+{
+    "tagName" : ["Couisine"],
+    "languageName" : ["French"],
+    "startingDate" : "2021-10-20 01:08:43+02",
+    "endingDate" : "2021-10-20 12:49:55+02"
+}
+###
+
+###
+
+POST  {{baseUrl}}/learn
+Content-Type: application/json
+
+{
+    "userId": 5,
+    "languageId": 2
+}
+###
+
+DELETE  {{baseUrl}}/learn
+Content-Type: application/json
+
+{
+    "userId": 5,
+    "languageId": 2
+}
+###
+
+DELETE  {{baseUrl}}/tags
+Content-Type: application/json
+
+{
+    "eventId": 5,
+    "tagId": 2
+}
